@@ -4,7 +4,7 @@ import requests
 
 SCREEN_W = 600
 SCREEN_H = 530
-COLORS = (44, 47, 51)
+COLORS = (0, 0, 0)
 COORD = ["Капустин яр - 45.76, 48.57", "Байконур - 63.31, 45.62", "Восточный - 128.334405, 51.884058",
          "Ясный - 59.850274, 51.049437"]
 
@@ -102,7 +102,7 @@ while run:
                         file.write(response.content)
                     screen.blit(pygame.image.load(map_file), (0, 0))
                     f2 = 0
-            screen.fill((44, 47, 51))
+            screen.fill(COLORS)
             text = font.render(m, True, (240, 240, 240))
             screen.blit(text, (0, 0))
             pygame.display.flip()
@@ -219,7 +219,7 @@ while run:
             text = font.render(f"Индекс: {ind}", True, (240, 240, 240))
             screen.blit(text, (385, 462))
         else:
-            pygame.draw.rect(screen, (44, 47, 51), [(385, 460), (100, 20)])
+            pygame.draw.rect(screen, COLORS, [(385, 460), (100, 20)])
         text = font.render(f, True, (240, 240, 240))
         screen.blit(text, (60, 500))
         screen.blit(pygame.image.load(map_file), (0, 0))
